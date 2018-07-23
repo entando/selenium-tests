@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.entando.selenium.tests.DTPageModelsDetailsTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 18.869 sec <<< FAILURE! - in org.entando.selenium.tests.DTPageModelsDetailsTest
+runTest  Time elapsed: 8.243 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.entando.selenium.tests.DTPageModelsDetailsTest.runTest(DTPageModelsDetailsTest.java:79)
+

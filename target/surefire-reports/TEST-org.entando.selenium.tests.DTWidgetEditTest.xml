@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.entando.selenium.tests.DTWidgetEditTest" time="33.297" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.171-b11"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="IT"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="test" value="org.entando.selenium.tests.DTWidgetEditTest"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/ufficio/entando_json/entando-QE/Selenium_TESTS_22_Giugno"/>
+    <property name="java.runtime.version" value="1.8.0_171-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="maven.ext.class.path" value="/usr/local/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="/usr/local/netbeans-8.2/java/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64:/usr/lib/jvm/java-8-oracle/jre/lib/i386::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.15.0-24-generic"/>
+    <property name="user.home" value="/home/ufficio"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="ufficio"/>
+    <property name="java.class.path" value="/usr/local/netbeans-8.2/java/maven/boot/plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=org.entando.selenium.tests.DTWidgetEditTest -Dmaven.ext.class.path=/usr/local/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="it"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_171"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/netbeans-8.2/java/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="runTest" classname="org.entando.selenium.tests.DTWidgetEditTest" time="19.062">
+    <error message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@class, &apos;alert&apos;)]&apos; (tried for 8 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(@class, 'alert')]' (tried for 8 second(s) with 500 milliseconds interval)
+	at org.entando.selenium.tests.DTWidgetEditTest.runTest(DTWidgetEditTest.java:112)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class, 'alert')]"}
+  (Session info: chrome=67.0.3396.99)
+  (Driver info: chromedriver=2.40.565383 (76257d1ab79276b2d53ee976b2c3e3b9f335cde7),platform=Linux 4.15.0-24-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'entando-HP-Pavilion-Notebook', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-24-generic', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565383 (76257d1ab79276..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}
+Session ID: a0c51a676981f21942d702bcfb0858b1
+*** Element info: {Using=xpath, value=//div[contains(@class, 'alert')]}
+	at org.entando.selenium.tests.DTWidgetEditTest.runTest(DTWidgetEditTest.java:112)
+</error>
+    <system-err><![CDATA[Starting ChromeDriver 2.40.565383 (76257d1ab79276b2d53ee976b2c3e3b9f335cde7) on port 31552
+Only local connections are allowed.
+lug 12, 2018 11:08:46 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAZIONI: Detected dialect: OSS
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Header Size: 76
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Name
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column found! 0
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Header Size: 76
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Name
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column found! 0
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Rows Size: 5
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento:   News - Latest News
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento:   English-widget
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento:   language widget
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento:   SeleniumTest_DontTouch
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento:   SeleniumTest_DontTouch881
+lug 12, 2018 11:09:04 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Can't find the element in the table.
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Header Size: 76
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Name
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Code
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column found! 1
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Header Size: 76
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Name
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Code
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: used
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column: Actions
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable findColumnIndex
+INFORMAZIONI: Column found! 3
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Rows Size: 5
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento: NWS_Latest
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento: english_widget
+lug 12, 2018 11:09:07 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento: language_widget
+lug 12, 2018 11:09:08 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento: seleniumtest_donttouch
+lug 12, 2018 11:09:08 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Elemento: seleniumtest_donttouch881
+lug 12, 2018 11:09:08 AM org.entando.selenium.utils.pageParts.SimpleTable getCellsFromRow
+INFORMAZIONI: Cell founded!!!
+lug 12, 2018 11:09:08 AM org.entando.selenium.utils.WidgetsTestBase deleteWidget
+INFORMAZIONI: Kebab clicked
+lug 12, 2018 11:09:08 AM org.entando.selenium.utils.WidgetsTestBase deleteWidget
+INFORMAZIONI: Kebab delete clicked
+]]></system-err>
+  </testcase>
+</testsuite>
