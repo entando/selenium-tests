@@ -94,6 +94,7 @@ public class DTDataModelsEditTest extends DataModelsTestBase {
         dTDataModelsAddPage.getHelp().click();
         Utils.waitUntilIsVisible(driver, dTDataModelsAddPage.getTooltip());
         Assert.assertTrue(dTDataModelsAddPage.getTooltip().isDisplayed());
+        sleep(300);
         
         //Verify fields
         Assert.assertFalse("Code Field is enabled",

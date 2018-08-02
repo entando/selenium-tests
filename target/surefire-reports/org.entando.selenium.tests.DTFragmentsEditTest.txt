@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.entando.selenium.tests.DTFragmentsEditTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.799 sec - in org.entando.selenium.tests.DTFragmentsEditTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.563 sec - in org.entando.selenium.tests.DTFragmentsEditTest

@@ -56,7 +56,7 @@ public class DTPageModelsAddTest extends PageModelsTestBase{
         String secondLevelLink = "Page Models";
         
         //Final pages titles
-        String pageTitle = "Page Models details";
+        String pageTitle = "Add";
         
         //Kebab column
         String kebabColumn = "Actions";
@@ -92,7 +92,7 @@ public class DTPageModelsAddTest extends PageModelsTestBase{
         dTPageModelsAddPage.getCodeField().click();
         dTPageModelsAddPage.getNameField().click();
         dTPageModelsAddPage.getJsonConfigurationField().click();
-        dTPageModelsAddPage.getJsonConfigurationField().clear();
+        dTPageModelsAddPage.clearJsonConfigurationField();
         dTPageModelsAddPage.getTemplateField().click();
         dTPageModelsAddPage.getCodeField().click();
         Assert.assertTrue(dTPageModelsAddPage.getCodeErrorField().isDisplayed());

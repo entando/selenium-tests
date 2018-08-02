@@ -80,6 +80,7 @@ public class DTWidgetEditTest extends WidgetsTestBase {
         SimpleTable table = new SimpleTable(dTWidgetPage.getTables().get("user"));
         WebElement cell = table.getCell(code, expectedHeaderTitles.get(0), 
                 expectedHeaderTitles.get(0));
+        Assert.assertTrue(cell != null);
         cell.findElement(By.xpath(".//a")).click();
         //Wait loading the page
         Utils.waitUntilIsVisible(driver, dTWidgetEditPage.getPageTitle());

@@ -75,9 +75,9 @@ public class DTUserProfileTypeAddTest extends UsersTestBase {
         
         //Navigation to the page
         dTDashboardPage.SelectSecondOrderLinkWithSleep(firstLevelLink, secondLevelLink);
-        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getNewButton());
+        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getAddButton());
         
-        dTUserProfileTypePage.getNewButton().click();
+        dTUserProfileTypePage.getAddButton().click();
         
         Utils.waitUntilIsVisible(driver, dTUserProfileTypeAddPage.getPageTitle());
         
@@ -100,17 +100,19 @@ public class DTUserProfileTypeAddTest extends UsersTestBase {
         dTUserProfileTypeAddPage.setNameField(profileTypeName);
         dTUserProfileTypeAddPage.setCodeField(profileTypeCode);
         
-        
-        
-        
         //Save and return
         dTUserProfileTypeAddPage.getSaveButton().click();
         
+        //Loading next step
+        Utils.waitUntilIsVisible(driver, dTUserProfileTypeAddPage.getAddButton());
+        sleep(400);
+        
+        dTUserProfileTypeAddPage.getSaveButton().click();
         
         //Wait loading page
+        Utils.waitUntilIsPresent(driver, dTUserProfileTypePage.spinnerTag);
+        Utils.waitUntilIsDisappears(driver, dTUserProfileTypePage.spinnerTag);
         Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getTableBody());
-        //Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getTableBody());
-        //sleep(1000);
         
         //Assert the presence of the created profile type in the Profile type table
         List<WebElement> createdUser = dTUserProfileTypePage.getTable()
@@ -119,7 +121,7 @@ public class DTUserProfileTypeAddTest extends UsersTestBase {
         Assert.assertTrue(!createdUser.isEmpty());
         
         //Delete the Profile type created for the test
-        //Assert.assertTrue(deleteProfileType(dTUserProfileTypePage, profileTypeName));
+        Assert.assertTrue(deleteProfileType(dTUserProfileTypePage, profileTypeName));
         
         
         /** Debug code **/

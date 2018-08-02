@@ -19,7 +19,6 @@ org/entando/selenium/pages/DTPageConfigurePage.class
 org/entando/selenium/tests/DTPageConfigureTest.class
 org/entando/selenium/pages/DTUserAddPage.class
 org/entando/selenium/utils/FunctionalTestBase.class
-org/entando/selenium/tests/DTUserDetailsTest.class
 org/entando/selenium/tests/DTPageAddTest.class
 org/entando/selenium/utils/PageObject.class
 org/entando/selenium/tests/DTDataTypesListTest.class
@@ -45,7 +44,6 @@ org/entando/selenium/tests/DTUserProfileTypeEditTest.class
 org/entando/selenium/tests/DTUserRoleAddTest.class
 org/entando/selenium/pages/DTPageEditPage.class
 org/entando/selenium/tests/DTUserProfileTypeAddTest.class
-org/entando/selenium/tests/DTUserEditProfileTest.class
 org/entando/selenium/pages/DTUserRolesPage.class
 org/entando/selenium/utils/ExpandableTablePageInterface.class
 org/entando/selenium/utils/AppConfig.class

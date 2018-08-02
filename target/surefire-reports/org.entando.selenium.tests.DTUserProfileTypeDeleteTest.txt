@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: org.entando.selenium.tests.DTUserProfileTypeDeleteTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 22.66 sec <<< FAILURE! - in org.entando.selenium.tests.DTUserProfileTypeDeleteTest
+runTest  Time elapsed: 12.958 sec  <<< ERROR!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //button[contains(.,'Add')]' (tried for 8 second(s) with 500 milliseconds interval)
+	at org.entando.selenium.tests.DTUserProfileTypeDeleteTest.runTest(DTUserProfileTypeDeleteTest.java:82)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(.,'Add')]"}
+  (Session info: headless chrome=68.0.3440.84)
+  (Driver info: chromedriver=2.40.565383 (76257d1ab79276b2d53ee976b2c3e3b9f335cde7),platform=Linux 4.15.0-29-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'entando-HP-Pavilion-Notebook', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-29-generic', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565383 (76257d1ab79276..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.84, webStorageEnabled: true}
+Session ID: e2f40c9d20517d8e8d99a4afb76eb76f
+*** Element info: {Using=xpath, value=//button[contains(.,'Add')]}
+	at org.entando.selenium.tests.DTUserProfileTypeDeleteTest.runTest(DTUserProfileTypeDeleteTest.java:82)
+

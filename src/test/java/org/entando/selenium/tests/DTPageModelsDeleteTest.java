@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.entando.selenium.pages.DTDashboardPage;
-import org.entando.selenium.pages.DTFragmentNewPage;
 import org.entando.selenium.pages.DTPageModelsAddPage;
 import org.entando.selenium.pages.DTPageModelsPage;
 import org.entando.selenium.utils.PageModelsTestBase;
@@ -54,10 +53,10 @@ public class DTPageModelsDeleteTest extends PageModelsTestBase {
         */
         //Link menù buttons
         String firstLevelLink = "UX Patterns";
-        String secondLevelLink = "Fragments";
+        String secondLevelLink = "Page Models";
         
         //Final pages titles
-        String pageTitle = "Fragment details";
+        String pageTitle = "Page Models";
         
         //Kebab column
         String kebabColumn = "Actions";

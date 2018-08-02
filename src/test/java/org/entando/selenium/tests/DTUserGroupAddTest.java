@@ -116,7 +116,7 @@ public class DTUserGroupAddTest extends UsersTestBase {
                 
         //Filling in the fields
         dTUserGroupAddPage.setName(groupName);
-        dTUserGroupAddPage.setCode(groupName);
+        //dTUserGroupAddPage.setCode(groupName);
         
         //Asserts submit button is enabled
         Assert.assertTrue(dTUserGroupAddPage.getSaveButton().isEnabled());
@@ -129,7 +129,7 @@ public class DTUserGroupAddTest extends UsersTestBase {
         Utils.waitUntilIsPresent(driver, dTUserGroupsPage.spinnerTag);
         Utils.waitUntilIsDisappears(driver, dTUserGroupsPage.spinnerTag);
         
-        //Assert the presence of the created role in the Group table
+        //Assert the presence of the created group in the Group table
         List<WebElement> createdUser = dTUserGroupsPage.getTable()
                 .findRowList(groupName, groupsTableHeaderTitles.get(0));
         

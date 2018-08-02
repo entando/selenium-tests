@@ -83,7 +83,7 @@ public class DTUserProfileTypeEditTest extends UsersTestBase {
         
         //Navigation to the page
         dTDashboardPage.SelectSecondOrderLinkWithSleep(firstLevelLink, secondLevelLink);
-        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getNewButton());
+        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getAddButton());
         
         //Create a profile type
         Assert.assertTrue(addProfileType(dTUserProfileTypePage, dTUserProfileTypeAddPage,

@@ -68,7 +68,7 @@ public class DTUserManageAuthorizationTest extends UsersTestBase{
         //Manage Authorization Table header
         List<String> authTableHeaderTitles = Arrays.asList("User Group","User Role","Actions");
         
-        String kebabAction = "Manage autorization for: " + username;
+        String kebabAction = "Manage authorization for: " + username;
         
         
         /*
@@ -130,6 +130,7 @@ public class DTUserManageAuthorizationTest extends UsersTestBase{
         trashButton.click();
         Utils.waitUntilIsVisible(driver, dTUserManageAuthorityPage.getInfoMessage());
         
+        /*
         //Asserts the presence of info message alert
         Assert.assertTrue(dTUserManageAuthorityPage.getInfoMessage().isDisplayed());
         
@@ -141,7 +142,7 @@ public class DTUserManageAuthorizationTest extends UsersTestBase{
         
         //Click on 'X' button to delete alert message
         dTUserManageAuthorityPage.getErrorMessageButton().click();
-        
+        */
         
         //Add a authorization
         dTUserManageAuthorityPage.getUserGroup().selectByVisibleText(userGroup);

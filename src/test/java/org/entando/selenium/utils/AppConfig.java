@@ -9,7 +9,6 @@ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
 details.
  */
-
 package org.entando.selenium.utils;
 
 import java.util.HashMap;
@@ -78,6 +77,8 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
     
+    private static final boolean HEADLESS = true;
+    
     
     @Bean
     public TestScope testScope() {
@@ -96,12 +97,18 @@ public class AppConfig {
     @Bean
     @Scope("test")
     public WebDriver webDriver(){
-        ChromeOptions options = new ChromeOptions();
-        /**options.addArguments("headless");
-        //options.addArguments("window-size=1200x600");
-        //return new ChromeDriver(options);**/
-        return new ChromeDriver();
-        //return new FirefoxDriver();
+        if (HEADLESS)
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
+            options.addArguments("window-size=1200x600");
+            return new ChromeDriver(options);
+        }
+        else
+        {
+            return new ChromeDriver();
+            //return new FirefoxDriver();
+        }
     } 
     
     @Bean

@@ -11,6 +11,7 @@ details.
  */
 package org.entando.selenium.utils;
 
+import static java.lang.Thread.sleep;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -38,7 +39,7 @@ public class WidgetsTestBase extends FunctionalTestBase {
     public final String code = "SeleniumTest_DontTouch" + randomNumber;
     public final String enTitle = code;
     public final String itTitle = code;
-    public final String group = "SeleniumTest_DontTouch";
+    public final String group = "1SeleniumTest_DontTouch";
     public final String customUI = "<>";
     
     public final String addSuccessMessage = "The widget "+ code.toLowerCase() +" has been created";
@@ -84,9 +85,9 @@ public class WidgetsTestBase extends FunctionalTestBase {
      * 
      * @param dTWidgetPage
      * @param code
-     * @return 
+     * @return
      */
-    public boolean deleteWidget(DTWidgetPage dTWidgetPage,String code){
+    public boolean deleteWidget(DTWidgetPage dTWidgetPage, String code){
         SimpleTable table = new SimpleTable(dTWidgetPage.getTables().get("user"));
         Kebab kebab = table.getKebabOnTable(code, expectedHeaderTitles.get(1), expectedHeaderTitles.get(3));
         if(kebab == null)
@@ -108,4 +109,5 @@ public class WidgetsTestBase extends FunctionalTestBase {
         return true;
     }
     
+        
 }

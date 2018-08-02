@@ -56,16 +56,16 @@ public class DTPageModelsDetailsTest extends PageModelsTestBase {
         */
         //Link menù buttons
         String firstLevelLink = "UX Patterns";
-        String secondLevelLink = "Fragments";
+        String secondLevelLink = "Page Models";
         
         //Final pages titles
-        String pageTitle = "Fragment details";
+        String pageTitle = "Page model details";
         
         //Kebab column
         String kebabColumn = "Actions";
         
         //Action menù
-        String action = "Details for: ";
+        String action = "Details";
         
         
         /*
@@ -83,14 +83,14 @@ public class DTPageModelsDetailsTest extends PageModelsTestBase {
         
         //Searching the corresponding kebab menù in the table
         Kebab kebab = dTPageModelsPage.getTable().getKebabOnTable(code, 
-                expectedHeaderTitles.get(0), expectedHeaderTitles.get(3));
+                expectedHeaderTitles.get(0), expectedHeaderTitles.get(2));
         Assert.assertFalse(kebab == null);
         
         //Click on kebab menù
         kebab.getClickable().click();
         Utils.waitUntilIsVisible(driver, kebab.getAllActionsMenu());
         //Click on the action
-        kebab.getAction(action + code).click();
+        kebab.getAction(action).click();
         
         Utils.waitUntilIsVisible(driver, dTPageModelsDetailsPage.getPageTitle());
         
@@ -99,6 +99,7 @@ public class DTPageModelsDetailsTest extends PageModelsTestBase {
         
         //Asserts the presence of the HELP button
         dTPageModelsDetailsPage.getHelp().click();
+        Utils.waitUntilIsVisible(driver, dTPageModelsDetailsPage.getTooltip());
         Assert.assertTrue(dTPageModelsDetailsPage.getTooltip().isDisplayed());
         
         //Asserts the edit button is enabled
@@ -109,11 +110,11 @@ public class DTPageModelsDetailsTest extends PageModelsTestBase {
         Assert.assertEquals("Content of the \"Name\" field different from the expected one",
                 code, dTPageModelsDetailsPage.getNameField().getText());
         Assert.assertEquals("Content of the \"Code\" field different from the expected one",
-                code.toLowerCase(), dTPageModelsDetailsPage.getCodeField().getText());
+                code, dTPageModelsDetailsPage.getCodeField().getText());
         Assert.assertEquals("Content of the \"Json Configuration\" field different from the expected one",
-                code, dTPageModelsDetailsPage.getJsonConfigurationField().getText());
+                jsonConfiguration, dTPageModelsDetailsPage.getJsonConfigurationField().getText());
         Assert.assertEquals("Content of the \"Template\" field different from the expected one",
-                code.toLowerCase(), dTPageModelsDetailsPage.getTemplateField().getText());
+                template, dTPageModelsDetailsPage.getTemplateField().getText());
         
        
         //Navigate to previous page

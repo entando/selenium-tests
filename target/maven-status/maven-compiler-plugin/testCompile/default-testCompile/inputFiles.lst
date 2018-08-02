@@ -62,14 +62,12 @@
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTPageModelsAddPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/pageParts/SimpleTable.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/DataModelsTestBase.java
-/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/PageModelTestBase.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTPageModelsPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/ExpandableTableTestTypology.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/TestScope.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTPageAddPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/FunctionalTestBase.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTUserGroupEditPage.java
-/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUserEditProfileTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTPageModelsDetailsPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTFragmentsDetailsTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTPageTreeSearchTest.java
@@ -79,6 +77,8 @@
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTWidgetEditPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTWidgetAddTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTDataTypesListTest.java
+/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTReloadConfigurationPage.java
+/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTSystemLabelsPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTFragmentEditPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTPageTreePage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUserGroupDetailsTest.java
@@ -100,12 +100,14 @@
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTLoginPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTFragmentNewPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTFragmentPage.java
+/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTCategoriesListTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUserGroupDeleteTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUserSearchTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/WidgetsTestBase.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTUserRoleAddPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTPageModelsListTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTDataModelsListTest.java
+/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTSystemLabelsAddPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTPageEditPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUserRoleEditTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUsersListTest.java
@@ -119,6 +121,6 @@
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTFragmentsSearchTest.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/BrowsableTableTestTypology.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTDashboardPage.java
+/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTDatabasePage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/pages/DTFragmentsDetailsPage.java
 /home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/utils/PageObject.java
-/home/ufficio/entando_json/entando-QE/Selenium_TESTS_18_Luglio/src/test/java/org/entando/selenium/tests/DTUserDetailsTest.java

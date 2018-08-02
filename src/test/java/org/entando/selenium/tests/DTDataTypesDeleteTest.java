@@ -71,6 +71,8 @@ public class DTDataTypesDeleteTest extends DataTypesTestBase {
         //Delete the Data Type
         Assert.assertTrue(deleteDataType(dTDataTypesPage, dataTypeCode));
         
+        sleep(500);
+        
         //Assert the element is not present in the table
         List<WebElement> createdFragment = dTDataTypesPage.getTable()
                 .findRowList(dataTypeCode, expectedHeaderTitles.get(1));

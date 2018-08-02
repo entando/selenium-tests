@@ -131,22 +131,27 @@ public class DTPageDetailsTest extends PageTreeTestBase{
         List<WebElement> rowsList = table.getRowsList();
         int rowIndex = table.findColumnIndex(tableEntries.get(0));
         String cellContent = rowsList.get(rowIndex).getText();
-        Assert.assertTrue(cellContent.contains(pageName));
+        Assert.assertTrue("Code Expected:"+pageName+" But Was:"+cellContent ,
+                cellContent.contains(pageName));
         
         //Title
         rowIndex = table.findColumnIndex(tableEntries.get(1));
         cellContent = rowsList.get(rowIndex).getText();
-        Assert.assertTrue(cellContent.contains(pageName));
+        Assert.assertTrue("Title Expected:"+pageName+" But Was:"+cellContent ,
+                cellContent.contains(pageName));
         
-        //Owner Group
+        //Owner Group Code
         rowIndex = table.findColumnIndex(tableEntries.get(2));
         cellContent = rowsList.get(rowIndex).getText();
-        Assert.assertTrue(cellContent.contains(super.ownerGroupName.toLowerCase()));
+        Assert.assertTrue("Owner Group Expected:"+ownerGroupCode+" But Was:"+cellContent ,
+                cellContent.contains(super.ownerGroupCode));
         
         //Page Model
         rowIndex = table.findColumnIndex(tableEntries.get(3));
         cellContent = rowsList.get(rowIndex).getText();
-        Assert.assertTrue(cellContent.contains(super.pageModelName.toLowerCase()));
+        Assert.assertTrue("Page Model Expected:"+super.pageModelName+" But Was:"+cellContent ,
+                cellContent.contains(super.pageModelName));
+        
         
         //Displayed in menu
         rowIndex = table.findColumnIndex(tableEntries.get(4));

@@ -81,10 +81,11 @@ public class DTFragmentsEditTest extends FragmentsTestBase {
         Utils.waitUntilIsVisible(driver, dTFragmentPage.getNewButton());
         
         //Create a Fragment
-        Assert.assertTrue(addFragment(dTFragmentPage, dTFragmentNewPage));
+        String testCode = code + "Edit";
+        Assert.assertTrue(addFragment(dTFragmentPage, dTFragmentNewPage, testCode));
         
         //Searching the corresponding kebab menù in the table
-        Kebab kebab = dTFragmentPage.getTable().getKebabOnTable(code, 
+        Kebab kebab = dTFragmentPage.getTable().getKebabOnTable(testCode, 
                 expectedHeaderTitles.get(0), expectedHeaderTitles.get(3));
         Assert.assertFalse(kebab == null);
         
@@ -92,7 +93,7 @@ public class DTFragmentsEditTest extends FragmentsTestBase {
         kebab.getClickable().click();
         Utils.waitUntilIsVisible(driver, kebab.getAllActionsMenu());
         //Click on the action
-        kebab.getAction(action + " " + code).click();
+        kebab.getAction(action + " " + testCode).click();
         
         Utils.waitUntilIsVisible(driver, dTFragmentEditPage.getPageTitle());
         
@@ -121,12 +122,12 @@ public class DTFragmentsEditTest extends FragmentsTestBase {
         
         //Assert the presence of the edited fragment in the table
         List<WebElement> createdFragment = dTFragmentPage.getTable()
-                .findRowList(code, expectedHeaderTitles.get(0));
+                .findRowList(testCode, expectedHeaderTitles.get(0));
         
         Assert.assertTrue(!createdFragment.isEmpty());
         
         //delete the fragment
-        Assert.assertTrue(deleteFragment(dTFragmentPage, code));
+        Assert.assertTrue(deleteFragment(dTFragmentPage, testCode));
         
         
         /** Debug code **/

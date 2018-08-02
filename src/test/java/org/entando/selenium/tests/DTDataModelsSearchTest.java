@@ -116,8 +116,8 @@ public class DTDataModelsSearchTest extends DataModelsTestBase {
         //Delete the Data Models
         Assert.assertTrue("Unable to delete the data model 1",
               deleteDataModel(dTDataModelsPage, dataModelCode1));
-        Utils.waitUntilIsPresent(driver, dTDataModelsPage.spinnerTag);
-        Utils.waitUntilIsDisappears(driver, dTDataModelsPage.spinnerTag);
+        //Utils.waitUntilIsPresent(driver, dTDataModelsPage.spinnerTag);
+        //Utils.waitUntilIsDisappears(driver, dTDataModelsPage.spinnerTag);
         Assert.assertTrue("Unable to delete the data model 2",
               deleteDataModel(dTDataModelsPage, dataModelCode2));
         

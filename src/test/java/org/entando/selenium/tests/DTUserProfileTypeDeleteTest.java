@@ -76,7 +76,7 @@ public class DTUserProfileTypeDeleteTest extends UsersTestBase{
         
         //Navigation to the page
         dTDashboardPage.SelectSecondOrderLinkWithSleep(firstLevelLink, secondLevelLink);
-        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getNewButton());
+        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getAddButton());
         
         //Create a profile type
         Assert.assertTrue(addProfileType(dTUserProfileTypePage, dTUserProfileTypeAddPage,
@@ -97,7 +97,7 @@ public class DTUserProfileTypeDeleteTest extends UsersTestBase{
         Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getDeleteModalButton());
         /** Debug code **/ Logger.getGlobal().info(dTUserProfileTypePage.getModalBody().getText());
         /** Debug code **/ Logger.getGlobal().info(MessageFormat.format("Expected: {0}", profileTypeName));
-        Assert.assertTrue(dTUserProfileTypePage.getModalBody().getText().contains(profileTypeName.toLowerCase().substring(0, 10)));
+        Assert.assertTrue(dTUserProfileTypePage.getModalBody().getText().contains(profileTypeCode));
         Utils.waitUntilIsClickable(driver, dTUserProfileTypePage.getDeleteModalButton());
         sleep(100);
         dTUserProfileTypePage.getDeleteModalButton().click();

@@ -83,11 +83,11 @@ public class DTUserEditTest extends UsersTestBase{
         dTDashboardPage.SelectSecondOrderLinkWithSleep(firstLevelLink, secondLevelLink);
         Utils.waitUntilIsVisible(driver, dTUsersPage.getAddButton());
         
-        //Create a page to edit
+        //Create a user to edit
         Assert.assertTrue(addUser(dTUsersPage, dTUserAddPage, username));
         
         
-        //Edit the page
+        //Edit the user
         Kebab kebab = dTUsersPage.getTable().getKebabOnTable(username, usersTableHeaderTitles.get(0), usersTableHeaderTitles.get(4));
         Assert.assertFalse(kebab == null);
         
@@ -113,6 +113,8 @@ public class DTUserEditTest extends UsersTestBase{
         //Asserts the switch buttons status
         Utils.waitUntilIsVisible(driver, dTUserEditPage.getResetSwitchElement());
         Utils.waitUntilIsVisible(driver, dTUserEditPage.getStatusSwitchElement());
+        
+        sleep(200);
         
         Assert.assertFalse(dTUserEditPage.getResetSwitch().isOn());
         Assert.assertTrue(dTUserEditPage.getStatusSwitch().isOn());

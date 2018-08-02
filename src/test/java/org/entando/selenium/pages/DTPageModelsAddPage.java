@@ -11,9 +11,13 @@ details.
  */
 package org.entando.selenium.pages;
 
+import static java.lang.Thread.sleep;
+import java.util.logging.Logger;
 import org.entando.selenium.utils.PageObject;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 /**
@@ -34,20 +38,28 @@ public class DTPageModelsAddPage extends PageObject {
     @FindBy(css = "i.PageTitle__icon")
     private WebElement help;
     
-    @FindBy(xpath = "//input[name = 'code']")
+    @FindBy(xpath = "//input[@name = 'code']")
     private WebElement codeField;
     
     @FindBy(xpath = "//label[* = 'Code']/../..//span[@class = 'help-block']")
     private WebElement codeErrorField;
     
-    @FindBy(xpath = "//input[name = 'descr']")
+    @FindBy(xpath = "//input[@name = 'descr']")
     private WebElement nameField;
     
     @FindBy(xpath = "//label[* = 'Name']/../..//span[@class = 'help-block']")
     private WebElement nameErrorField;
     
-    @FindBy(xpath = "//label[* = 'JSON Configuration']/..//div[@class = 'react-codemirror2']")
+    @FindBy(xpath = "//label[* = 'JSON Configuration']/../div/div/div/div[6]/div/div/div/div/div/div[3]/pre")
+    private WebElement jsonConfigurationFieldLine3;
+    @FindBy(xpath = "//label[* = 'JSON Configuration']/../div/div/div/div[6]/div/div/div/div/div/div[2]/pre")
+    private WebElement jsonConfigurationFieldLine2;
+    @FindBy(xpath = "//label[* = 'JSON Configuration']/../div/div/div/div[6]/div/div/div/div/div/div[1]/pre")
+    private WebElement jsonConfigurationFieldLine1;
+    
+    @FindBy(xpath = "//label[* = 'JSON Configuration']/..//div[contains(@class, 'CodeMirror cm-s-default')]")
     private WebElement jsonConfigurationField;
+    
     
     @FindBy(xpath = "//label[* = 'Template']/..//div[@class = 'react-codemirror2']")
     private WebElement templateField;
@@ -101,23 +113,57 @@ public class DTPageModelsAddPage extends PageObject {
         this.codeField.sendKeys(codeField);
     }
 
+    
     public void setNameField(String nameField) {
         this.nameField.clear();
         this.nameField.sendKeys(nameField);
     }
 
-    public void setJsonConfigurationField(String jsonConfigurationField) {
-        this.jsonConfigurationField.click();
-        this.jsonConfigurationField.clear();
-        this.jsonConfigurationField.sendKeys(jsonConfigurationField);
+    
+    
+    public void setJsonConfigurationField(String jsonConfigurationField) throws InterruptedException {
+        Logger.getGlobal().info("setJesonConfig");
+        //this.jsonConfigurationField.click();
+        //Logger.getGlobal().info("JesonConfig clicked");
+        this.jsonConfigurationFieldLine1.click();
+        Actions builder = new Actions(driver); 
+        builder.sendKeys(jsonConfigurationField).perform();
+        Logger.getGlobal().info("JesonConfig compiled");
     }
+    
+    
+    
+    public void clearJsonConfigurationField() {
+        Actions builder = new Actions(driver); 
+        builder.click(this.jsonConfigurationFieldLine3)
+                .doubleClick().perform();
+        builder.sendKeys(Keys.BACK_SPACE).perform();
+        Logger.getGlobal().info("step 1");
+        
+        builder = new Actions(driver); 
+        builder.click(this.jsonConfigurationFieldLine2).perform();
+        builder.click(this.jsonConfigurationFieldLine2).perform();
+        builder.click(this.jsonConfigurationFieldLine2).perform();
+        builder.sendKeys(Keys.BACK_SPACE).perform(); 
+        Logger.getGlobal().info("step 2");
+        
+        builder = new Actions(driver);
+        builder.click(this.jsonConfigurationFieldLine1).perform();
+        builder.doubleClick().perform();
+        builder.sendKeys(Keys.BACK_SPACE).perform(); 
+    }
+    
+    
 
     public void setTemplateField(String templateField) {
-        this.templateField.click();
-        this.templateField.clear();
-        this.templateField.sendKeys(templateField);
+        Actions builder = new Actions(driver);
+        builder.click(this.templateField).perform();
+        builder.sendKeys(templateField).perform();
+        Logger.getGlobal().info("templateField compiled");
     }
 
+    
+    
     public WebElement getCodeErrorField() {
         return codeErrorField;
     }

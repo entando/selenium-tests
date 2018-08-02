@@ -55,7 +55,7 @@ public class DTWidgetDeleteTest extends WidgetsTestBase {
         //Link menù buttons
         String firstLevelLink = "UX Patterns";
         String secondLevelLink = "Widgets";
-       
+        
         
         /*
             Actions and asserts
@@ -73,7 +73,7 @@ public class DTWidgetDeleteTest extends WidgetsTestBase {
         
         //Delete the Widget
         Assert.assertTrue("Unable to delete the widget",
-                addWidget(dTWidgetPage, dTWidgetAddPage));
+                deleteWidget(dTWidgetPage, code));
         
         //Assert the element is not present in the table
         /*Debug code*/ Logger.getGlobal().log(Level.INFO, "Widget Code: {0}", code);

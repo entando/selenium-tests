@@ -11,6 +11,8 @@ details.
  */
 package org.entando.selenium.utils;
 
+import static java.lang.Thread.sleep;
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -18,6 +20,7 @@ import java.util.logging.Logger;
 import org.entando.selenium.pages.DTPageModelsAddPage;
 import org.entando.selenium.pages.DTPageModelsPage;
 import org.entando.selenium.utils.pageParts.Kebab;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -39,7 +42,17 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
     
         
     //The code to insert in the fields
-    public final String jsonConfiguration = "{\n" + "  \"frames\": []\n" + "}";
+    public final String jsonConfiguration = "{\n" +
+                                            "  \"frames\": [\n" +
+                                            "    {\n" +
+                                            "      \"pos\": 0,\n" +
+                                            "      \"descr\": \"SeleniumCell\",\n" +
+                                            "      \"mainFrame\": false,\n" +
+                                            "      \"defaultWidget\": null,\n" +
+                                            "      \"sketch\": null\n" +
+                                            "    }\n" +
+                                            "  ]\n" +
+                                            "}";
     public final String template = "<>";
     
     
@@ -49,8 +62,9 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
      * @param dTPageModelsPage
      * @param dTPageModelsAddPage
      * @return 
+     * @throws java.lang.InterruptedException 
      */
-    public boolean addPageModel(DTPageModelsPage dTPageModelsPage, DTPageModelsAddPage dTPageModelsAddPage){
+    public boolean addPageModel(DTPageModelsPage dTPageModelsPage, DTPageModelsAddPage dTPageModelsAddPage) throws InterruptedException{
         return this.addPageModel(dTPageModelsPage, dTPageModelsAddPage, this.code);
     }
     
@@ -62,9 +76,10 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
      * @param dTPageModelsAddPage
      * @param fragmentCode
      * @return 
+     * @throws java.lang.InterruptedException 
      */
     public boolean addPageModel(DTPageModelsPage dTPageModelsPage, 
-            DTPageModelsAddPage dTPageModelsAddPage, String fragmentCode){
+            DTPageModelsAddPage dTPageModelsAddPage, String fragmentCode) throws InterruptedException{
         Utils.waitUntilIsVisible(driver, dTPageModelsPage.getAddButton());
         
         //Click on New Button
@@ -72,9 +87,13 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
         
         Utils.waitUntilIsVisible(driver, dTPageModelsAddPage.getSaveButton());
         
+        Utils.waitUntilIsPresent(driver, dTPageModelsPage.spinnerTag);
+        Utils.waitUntilIsDisappears(driver, dTPageModelsPage.spinnerTag);
+        
         //Compilation of the fields
         dTPageModelsAddPage.setCodeField(code);
         dTPageModelsAddPage.setNameField(code);
+        dTPageModelsAddPage.clearJsonConfigurationField();
         dTPageModelsAddPage.setJsonConfigurationField(jsonConfiguration);
         dTPageModelsAddPage.setTemplateField(template);
         
@@ -84,6 +103,9 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
         //Wait loading page
         Utils.waitUntilIsPresent(driver, dTPageModelsPage.spinnerTag);
         Utils.waitUntilIsDisappears(driver, dTPageModelsPage.spinnerTag);
+        
+        Utils.waitUntilIsVisible(driver, dTPageModelsPage.getMessage());
+        dTPageModelsPage.getCloseMessageButton().click();
                 
         //Reload the page
         driver.get(driver.getCurrentUrl());
@@ -106,9 +128,9 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
      * @param pageModelCode
      * @return 
      */
-    public boolean deletePageModel(DTPageModelsPage dTPageModelsPage, String pageModelCode){
+    public boolean deletePageModel(DTPageModelsPage dTPageModelsPage, String pageModelCode) throws InterruptedException{
         Kebab kebab = dTPageModelsPage.getTable().getKebabOnTable(pageModelCode, 
-                expectedHeaderTitles.get(0), expectedHeaderTitles.get(3));
+                expectedHeaderTitles.get(0), expectedHeaderTitles.get(2));
         if(kebab == null)
         {
             /** Debug code **/ Logger.getGlobal().info("PageModel not found!");
@@ -122,6 +144,18 @@ public class PageModelsTestBase extends BrowsableTableTestTypology{
         kebab.getAction("Delete").click();
         /** Debug code **/ Logger.getGlobal().info("Kebab delete clicked");
         
+        Utils.waitUntilIsVisible(driver, dTPageModelsPage.getDeleteModalButton());
+        /** Debug code **/ Logger.getGlobal().info(dTPageModelsPage.getModalBody().getText());
+        /** Debug code **/ Logger.getGlobal().info(MessageFormat.format("Expected: {0}", pageModelCode));
+        Assert.assertTrue(dTPageModelsPage.getModalBody().getText().contains(pageModelCode));
+        Utils.waitUntilIsClickable(driver, dTPageModelsPage.getDeleteModalButton());
+        sleep(100);
+        dTPageModelsPage.getDeleteModalButton().click();
+        Utils.waitUntilIsDisappears(driver, DTPageModelsPage.modalWindowTag);
+        Utils.waitUntilIsVisible(driver, dTPageModelsPage.getMessage());
+        dTPageModelsPage.getCloseMessageButton().click();
+        
+        /** Debug code **/ Logger.getGlobal().info("delete page return true");
         return true;
     }
     

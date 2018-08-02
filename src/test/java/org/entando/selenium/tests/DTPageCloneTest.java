@@ -118,7 +118,7 @@ public class DTPageCloneTest extends PageTreeTestBase{
         //Set the new page cloned name and code
         dTPageClonePage.setEnTitleField(newPageName);
         dTPageClonePage.setItTitleField(newPageName);
-        dTPageClonePage.setEsTitleField(newPageName);
+        //dTPageClonePage.setEsTitleField(newPageName);
         dTPageClonePage.setCodeField(newCode);
         
         //Select the branch

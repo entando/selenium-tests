@@ -1,5 +1,4 @@
 /*
-
 Copyright 2015-Present Entando Inc. (http://www.entando.com) All rights reserved.
 This library is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free
@@ -82,15 +81,19 @@ public class DTWidgetsListTest extends WidgetsTestBase {
         Assert.assertEquals(expectedHeaderTitles, dTWidgetPage.getTableHeader());
         
         
+        /** Debug code **/
         dTWidgetPage.getTables().keySet().forEach((key) -> {
-            System.out.println(key);
+            Logger.getGlobal().info(key);
         });
-
-      
+        /** End Debug code**/
+        
+        
+        
         /** Debug code **/
         if(Logger.getGlobal().getLevel() == Level.INFO){
             sleep(SLEEPTIME);
         }
         /** End Debug code**/
+        
     }
 }

@@ -9,17 +9,18 @@ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
 details.
  */
-
 package org.entando.selenium.tests;
 
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import static java.lang.Thread.sleep;
+import java.util.Random;
 import org.entando.selenium.utils.*;
 import org.entando.selenium.pages.DTDashboardPage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.entando.selenium.pages.DTPageAddPage;
 import org.junit.Assert;
 import org.entando.selenium.pages.DTPageTreePage;
 import org.junit.jupiter.api.Test;
@@ -45,6 +46,9 @@ public class DTPageTreeListTest extends PageTreeTestBase {
     @Autowired
     public DTPageTreePage dTPageTreePage;
     
+    @Autowired
+    public DTPageAddPage dTPageAddPage;
+    
     /*
         Test
     */
@@ -62,6 +66,13 @@ public class DTPageTreeListTest extends PageTreeTestBase {
                 
         //Buttons name
         String button1 = "Add";
+        
+        //pages names to create
+        Random generator = new Random();
+        int randomNumber = generator.nextInt(9999);
+        String pageName1 = "SeleniumTest" + randomNumber;
+        randomNumber = generator.nextInt(9999);
+        String pageName2 = "SeleniumTest" + randomNumber;
         
         /*
             Actions and asserts
@@ -89,21 +100,31 @@ public class DTPageTreeListTest extends PageTreeTestBase {
         Assert.assertEquals(super.headerTitles, dTPageTreePage.getTable().getHeaderTitlesList());
         
         //Verification of the opening tree functionality
-        //expandTable(dTPageTreePage);
+        expandTable(dTPageTreePage);
+        
+        
+
+        //Creating pages to perform tests
+        //Adding a first page
+        Assert.assertTrue(addPage(dTPageTreePage, dTPageAddPage, pageName1));
+        
+        //Adding a second page
+        Assert.assertTrue(addPage(dTPageTreePage, dTPageAddPage, pageName2));
+        
+        
         
         //Verification of the drag and drop functionality
-        /*
-        WebElement from = dTPageTreePage.getTable().getDragButton("SeleniumTest_DontTouch2"); 
-        WebElement to = dTPageTreePage.getTable().getCell("SeleniumTest_DontTouch", "Page tree", "Page tree");
+        WebElement from = dTPageTreePage.getTable().getDragButton(pageName1); 
+        WebElement to = dTPageTreePage.getTable().getCell(pageName2, "Page tree", "Page tree");
         Actions builder = new Actions(driver); 
         
         builder.dragAndDrop(from, to).perform();
         
-        from = dTPageTreePage.getTable().getDragButton("SeleniumTest_DontTouch2"); 
+        from = dTPageTreePage.getTable().getDragButton(pageName1); 
         to = dTPageTreePage.getTable().getCell("Home", "Page tree", "Page tree");
         
         builder.dragAndDrop(from, to).perform();
-        */
+        
         
         /*WebElement from = dTPageTreePage.getTable().getDragButton("SeleniumTest_DontTouch2");
         WebElement to = dTPageTreePage.getTable().getCell("Home", "Page tree", "Page tree");
@@ -122,7 +143,7 @@ public class DTPageTreeListTest extends PageTreeTestBase {
         series.perform();*/
         
         
-        WebElement from = driver.findElement(By.xpath("//*[text()= 'SeleniumTest_DontTouch2']"));
+        /*WebElement from = driver.findElement(By.xpath("//*[text()= 'SeleniumTest_DontTouch2']"));
         WebElement to = dTPageTreePage.getSearchField();
         Point coordinates1 = from.getLocation();
         Point coordinates2 = to.getLocation();  
@@ -138,7 +159,11 @@ public class DTPageTreeListTest extends PageTreeTestBase {
         robot.mousePress(InputEvent.BUTTON1_MASK);
         robot.mouseMove(coordinates2.getX()+10, coordinates2.getY()+10);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        Thread.sleep(2000);
+        Thread.sleep(2000);*/
+        
+        //Delete the pages
+        Assert.assertTrue(deletePage(dTPageTreePage, pageName1));
+        Assert.assertTrue(deletePage(dTPageTreePage, pageName2));
         
         
         /** Debug code **/

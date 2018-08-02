@@ -72,7 +72,7 @@ public class FunctionalTestBase {
             Remember to set 'Level.OFF' to turn off Loger
             Set 'Level.INFO' to turn on Logger
         */
-        Logger.getGlobal().setLevel(Level.INFO);
+        Logger.getGlobal().setLevel(Level.OFF);
         
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -85,8 +85,8 @@ public class FunctionalTestBase {
 
     @AfterAll
     public void tearDown() {
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
     }
     
     /**

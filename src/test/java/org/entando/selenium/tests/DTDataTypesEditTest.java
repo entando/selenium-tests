@@ -97,6 +97,7 @@ public class DTDataTypesEditTest extends DataTypesTestBase {
         dTDataTypesAddPage.getHelp().click();
         Utils.waitUntilIsVisible(driver, dTDataTypesAddPage.getTooltip());
         Assert.assertTrue(dTDataTypesAddPage.getTooltip().isDisplayed());
+        sleep(400);
         
         //Verify fields
         Assert.assertFalse("Code Field is enabled",

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.entando.selenium.tests.DTCategoriesListTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.585 sec - in org.entando.selenium.tests.DTCategoriesListTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.188 sec - in org.entando.selenium.tests.DTCategoriesListTest

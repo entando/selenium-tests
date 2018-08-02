@@ -37,6 +37,26 @@ public class Utils {
     }
     
     
+    /**
+     * 
+     * @param driver
+     * @param element 
+     */
+    public static void waitUntilIsVisible(WebDriver driver, By element) {
+        WebDriverWait wait = new WebDriverWait(driver, 8);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+    
+    
+    
+    /*
+    public static boolean waitUntilIsVisible(WebDriver driver, WebElement element) {
+        Wait wait = new WebDriverWait(driver, 8).ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return element.isDisplayed();
+    }
+    */
+    
     
     /**
      * 
@@ -56,7 +76,7 @@ public class Utils {
      * @param element 
      */
     public static void waitUntilIsDisappears(WebDriver driver, By element) {
-        WebDriverWait wait = new WebDriverWait(driver, 8, 50);
+        WebDriverWait wait = new WebDriverWait(driver, 8, 5);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(element));
     }
     

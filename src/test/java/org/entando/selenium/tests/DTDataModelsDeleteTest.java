@@ -71,13 +71,6 @@ public class DTDataModelsDeleteTest extends DataModelsTestBase {
         //Delete the Data Model
         Assert.assertTrue(deleteDataModel(dTDataModelsPage, dataModelCode));
         
-        //Verify the alert message
-        Assert.assertTrue("Alert Message has not displayed",
-                dTDataModelsPage.getAlertMessage().isDisplayed());
-        Assert.assertTrue("Invalid Alert Message content",
-                dTDataModelsPage.getAlertMessageContent().contains("successfully deleted"));
-        dTDataModelsPage.getCloseMessageButton().click();
-        
         //Assert the element is not present in the table
         List<WebElement> createdFragment = dTDataModelsPage.getTable()
                 .findRowList(dataModelCode, expectedHeaderTitles.get(1));

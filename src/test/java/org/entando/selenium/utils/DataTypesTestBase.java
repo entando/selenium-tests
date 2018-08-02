@@ -129,7 +129,8 @@ public class DataTypesTestBase extends BrowsableTableTestTypology{
         sleep(100);
         dTDataTypesPage.getDeleteModalButton().click();
         Utils.waitUntilIsDisappears(driver, DTDataTypesPage.modalWindowTag);
-        /** Debug code **/ Logger.getGlobal().info("delete Data Type return true");   
+        /** Debug code **/ Logger.getGlobal().info("delete Data Type return true");
+        
         return true;
     }
     

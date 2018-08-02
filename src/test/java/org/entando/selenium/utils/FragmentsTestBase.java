@@ -12,6 +12,7 @@ details.
 package org.entando.selenium.utils;
 
 
+import static java.lang.Thread.sleep;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -89,8 +90,9 @@ public class FragmentsTestBase extends BrowsableTableTestTypology{
      * @param dTFragmentPage
      * @param fragmentCode
      * @return 
+     * @throws java.lang.InterruptedException 
      */
-    public boolean deleteFragment(DTFragmentPage dTFragmentPage, String fragmentCode){
+    public boolean deleteFragment(DTFragmentPage dTFragmentPage, String fragmentCode) throws InterruptedException{
         Kebab kebab = dTFragmentPage.getTable().getKebabOnTable(fragmentCode, 
                 expectedHeaderTitles.get(0), expectedHeaderTitles.get(3));
         if(kebab == null)
@@ -106,6 +108,7 @@ public class FragmentsTestBase extends BrowsableTableTestTypology{
         kebab.getAction("Delete").click();
         /** Debug code **/ Logger.getGlobal().info("Kebab delete clicked");
         
+        sleep(500);
         return true;
     }
     

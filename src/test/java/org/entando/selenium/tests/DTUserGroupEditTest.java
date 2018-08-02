@@ -81,7 +81,7 @@ public class DTUserGroupEditTest extends UsersTestBase {
         dTDashboardPage.SelectSecondOrderLink(firstLevelLink, secondLevelLink);
         Utils.waitUntilIsVisible(driver, dTUserGroupsPage.getAddButton());
         
-        //Create a role
+        //Create a group
         Assert.assertTrue(addGroup(dTUserGroupsPage, dTUserGroupAddPage, groupName));
         
         Kebab kebab = dTUserGroupsPage.getTable().getKebabOnTable(groupName, 
@@ -101,6 +101,7 @@ public class DTUserGroupEditTest extends UsersTestBase {
         //Asserts the PAGE TITLE is the expected one
         Assert.assertEquals(pageTitle, dTUserGroupAddPage.getPageTitle().getText());
         
+        sleep(500);
         dTUserGroupAddPage.getName().clear();
         
         //Asserts the presence of the HELP button
@@ -117,7 +118,7 @@ public class DTUserGroupEditTest extends UsersTestBase {
         Assert.assertTrue(dTUserGroupAddPage.getCodeRequiredAsterisk().isDisplayed());
         Assert.assertTrue(dTUserGroupAddPage.getNameFieldError().isDisplayed());
         
-        //Asserts info xfields functionality
+        //Asserts info functionality
         dTUserGroupAddPage.getInfoNameButton().click();
         Assert.assertTrue(dTUserGroupAddPage.getNameTooltip().isDisplayed());
         dTUserGroupAddPage.getInfoCodeButton().click();

@@ -138,6 +138,9 @@ public class DTWidgetAddTest extends WidgetsTestBase {
         Assert.assertEquals("Success message content not valid",
                 addSuccessMessage, dTWidgetPage.getAlertMessageContent());
         
+        dTWidgetPage.getCloseAlertMessageButton().click();
+        
+        
         //Delete the Widget
         Assert.assertTrue("Unable to delete the widget", deleteWidget(dTWidgetPage, code));
         

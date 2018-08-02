@@ -114,7 +114,7 @@ public class DTPageAddTest extends PageTreeTestBase{
         dTPageAddPage.getPageModel().selectByVisibleText(super.pageModelName);
         dTPageAddPage.getPageModel().selectByVisibleText(undefinedOption);
         Assert.assertTrue(dTPageAddPage.getOwnerGroupError().isDisplayed());
-        //dTPageAddPage.getEsTitleField().click();
+        dTPageAddPage.getItTitleField().click();
         Assert.assertTrue(dTPageAddPage.getPageModelError().isDisplayed());
         dTPageAddPage.getEnTitleField().click();
         //Assert.assertTrue(dTPageAddPage.getEsTitleFieldError().isDisplayed());

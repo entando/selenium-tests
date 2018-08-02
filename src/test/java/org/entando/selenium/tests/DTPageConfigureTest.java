@@ -111,7 +111,7 @@ public class DTPageConfigureTest extends PageTreeTestBase{
         WebElement widgetText = driver.findElement(By.xpath("//span[text()='Widgets']"));
         WebElement infoButton = dTPageConfigurePage.getInfoButton();
         
-        WebElement from = driver.findElement(By.xpath("//a[text()='data_widget']"));
+        WebElement from = driver.findElement(By.xpath("//a[text()='language widget']"));
         Assert.assertNotNull(from);
         WebElement from2 = driver.findElement(By.xpath("//a[text()='English-widget']"));
         Assert.assertNotNull(from2);

@@ -140,7 +140,14 @@ public class DataModelsTestBase extends BrowsableTableTestTypology{
         sleep(100);
         dTDataModelsPage.getDeleteModalButton().click();
         Utils.waitUntilIsDisappears(driver, DTDataModelsPage.modalWindowTag);
-        /** Debug code **/ Logger.getGlobal().info("delete Data Model return true");   
+        Utils.waitUntilIsVisible(driver, dTDataModelsPage.getAlertMessage());
+        Assert.assertTrue("Alert Message has not displayed",
+                dTDataModelsPage.getAlertMessage().isDisplayed());
+        Assert.assertTrue("Invalid Alert Message content",
+                dTDataModelsPage.getAlertMessageContent().contains("successfully deleted"));
+        dTDataModelsPage.getCloseMessageButton().click();
+        //alert toast-pf alert-success alert-dismissable
+        /** Debug code **/ Logger.getGlobal().info("delete Data Model return true");
         return true;
     }
     

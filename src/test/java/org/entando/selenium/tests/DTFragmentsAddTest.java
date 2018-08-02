@@ -91,7 +91,8 @@ public class DTFragmentsAddTest extends FragmentsTestBase  {
                 dTFragmentNewPage.getSaveButton().isEnabled());
         
         //Compilation of the fields
-        dTFragmentNewPage.setCode(code);
+        String codeTest = code + "Add";
+        dTFragmentNewPage.setCode(codeTest);
         dTFragmentNewPage.setGUICode(guiCode);
         
         Assert.assertTrue("Save button is disabled",
@@ -108,13 +109,13 @@ public class DTFragmentsAddTest extends FragmentsTestBase  {
         
         //Assert the presence of the added fragment in the fragment table
         List<WebElement> createdFragment = dTFragmentPage.getTable()
-                .findRowList(code, expectedHeaderTitles.get(0));
+                .findRowList(codeTest, expectedHeaderTitles.get(0));
         
         Assert.assertTrue(!createdFragment.isEmpty());
         
-        //delete the role
-        Assert.assertTrue(deleteFragment(dTFragmentPage, code));
-                
+        //delete the fragment
+        Assert.assertTrue(deleteFragment(dTFragmentPage, codeTest));
+        
         /** Debug code **/
         if(Logger.getGlobal().getLevel() == Level.INFO){
             sleep(SLEEPTIME);

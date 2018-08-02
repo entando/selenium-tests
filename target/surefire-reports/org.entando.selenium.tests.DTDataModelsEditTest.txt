@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.entando.selenium.tests.DTDataModelsEditTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.684 sec - in org.entando.selenium.tests.DTDataModelsEditTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.817 sec - in org.entando.selenium.tests.DTDataModelsEditTest

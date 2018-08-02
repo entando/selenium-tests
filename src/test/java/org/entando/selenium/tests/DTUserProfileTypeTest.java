@@ -50,10 +50,10 @@ public class DTUserProfileTypeTest extends UsersTestBase {
         String secondLevelLink = "Profile types";
         
         //Final page title
-        String pageTitle = "Profile Type";
+        String pageTitle = "Profile Types";
                 
         //Buttons name
-        String button1 = "New";
+        String button1 = "Add";
         
         /*
             Actions and asserts
@@ -73,7 +73,7 @@ public class DTUserProfileTypeTest extends UsersTestBase {
         Assert.assertTrue(dTUserProfileTypePage.getTooltip().isDisplayed());
 
         //Asserts the presence of the BUTTON with displayed name as argument
-        Assert.assertTrue(dTUserProfileTypePage.getNewButton().getText().equals(button1));
+        Assert.assertTrue(dTUserProfileTypePage.getAddButton().getText().equals(button1));
 
         //Asserts table COLUMNS NAME are the expected ones
         Assert.assertEquals(profileTypeTableHeaderTitles, dTUserProfileTypePage.getTable().getHeaderTitlesList());

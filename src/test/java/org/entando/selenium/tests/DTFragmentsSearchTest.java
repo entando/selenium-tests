@@ -57,9 +57,9 @@ public class DTFragmentsSearchTest extends FragmentsTestBase {
         //Fragments code
         Random generator = new Random();
         int randomNumber = generator.nextInt(8999) + 1000;
-        String code1 = "1SLNM_TEST_" + randomNumber;
+        String code1 = "1SLNM_TEST_" + randomNumber + "Search1";
         randomNumber = generator.nextInt(89999) + 10000;
-        String code2 = "1SLNM_TEST_" + randomNumber;
+        String code2 = "1SLNM_TEST_" + randomNumber + "Search2";
         String code3 = "1SLNM_TEST_FAKE";
         
         /*

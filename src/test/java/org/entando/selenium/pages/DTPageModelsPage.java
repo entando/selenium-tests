@@ -15,6 +15,7 @@ import org.entando.selenium.utils.BrowsableTablePageInterface;
 import org.entando.selenium.utils.PageObject;
 import org.entando.selenium.utils.pageParts.Kebab;
 import org.entando.selenium.utils.pageParts.SimpleTable;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,6 +62,20 @@ public class DTPageModelsPage extends PageObject implements BrowsableTablePageIn
     @FindBy(xpath = "//button[contains(., 'Add')]")
     private WebElement addButton;
     
+    @FindBy(xpath = "//div[contains(@class, 'modal-body')]")
+    private WebElement modalBody;
+    
+    @FindBy(xpath = "//button[contains(@id, 'PageModelDeleteModal__button-delete')]")
+    private WebElement deleteModalButton;
+    
+    @FindBy(xpath = "//div[contains(@class, 'alert toast-pf')]")
+    private WebElement message;
+    
+    
+    
+    public static final By modalWindowTag = By.xpath("//div[contains(@class, 'modal-content')]");
+    
+    public final By spinnerTag = By.xpath("//div[contains(@class, 'spinner-md')]");
     
     @Override
     public SimpleTable getTable() {
@@ -116,6 +131,26 @@ public class DTPageModelsPage extends PageObject implements BrowsableTablePageIn
 
     public WebElement getPageTitle() {
         return pageTitle;
+    }
+
+    public WebElement getModalBody() {
+        return modalBody;
+    }
+
+    public WebElement getDeleteModalButton() {
+        return deleteModalButton;
+    }
+
+    public WebElement getTableBody() {
+        return tableBody;
+    }
+
+    public WebElement getMessage() {
+        return message;
+    }
+    
+    public WebElement getCloseMessageButton(){
+        return message.findElement(By.xpath(".//button"));
     }
         
     public DTPageModelsPage(WebDriver driver) {

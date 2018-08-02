@@ -73,17 +73,18 @@ public class DTFragmentsDeleteTest extends FragmentsTestBase {
         Utils.waitUntilIsVisible(driver, dTFragmentPage.getNewButton());
         
         //Create a Fragment
-        Assert.assertTrue(addFragment(dTFragmentPage, dTFragmentNewPage));
+        String testCode = code + "Delete";
+        Assert.assertTrue(addFragment(dTFragmentPage, dTFragmentNewPage, testCode));
                 
         //Delete the role
-        Assert.assertTrue(deleteFragment(dTFragmentPage, code));
+        Assert.assertTrue(deleteFragment(dTFragmentPage, testCode));
         
         //Reload the page
         driver.get(driver.getCurrentUrl());
         
         //Assert the element is not present in the table
         List<WebElement> createdFragment = dTFragmentPage.getTable()
-                .findRowList(code, expectedHeaderTitles.get(0));
+                .findRowList(testCode, expectedHeaderTitles.get(0));
         
         Assert.assertTrue(createdFragment.isEmpty());
                 

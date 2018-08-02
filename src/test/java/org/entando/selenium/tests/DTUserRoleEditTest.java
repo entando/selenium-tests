@@ -110,6 +110,7 @@ public class DTUserRoleEditTest extends UsersTestBase {
         Assert.assertTrue(dTUserRoleEditPage.getTooltip().isDisplayed());
         
         //Verify fields
+        sleep(500);
         String realValue = dTUserRoleEditPage.getNameField().getAttribute("value");
         Assert.assertEquals(roleName, realValue);
         Assert.assertFalse(dTUserRoleEditPage.getCodeField().isEnabled());

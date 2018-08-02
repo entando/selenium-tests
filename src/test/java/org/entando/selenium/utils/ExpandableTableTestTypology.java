@@ -54,11 +54,24 @@ public class ExpandableTableTestTypology extends FunctionalTestBase{
         List<WebElement> buttons = page.getTable().getExpandableButtons(rowName, columnName);
         /** Debug code **/ Logger.getGlobal().log(Level.INFO, "Numeber of expandable buttons founded: {0}", String.valueOf(buttons.size()));
         clickOnEveryButton(buttons);
-        Utils.waitUntilIsPresent(driver, ExpandableTable.rowSpinner);
+        
         //Wait until the spinner disappears
-        while(!driver.findElements(ExpandableTable.rowSpinner).isEmpty()){
-            sleep(50);
+        sleep(800);
+        //Utils.waitUntilIsVisible(driver, ExpandableTable.rowSpinner);
+        //Utils.waitUntilIsPresent(driver, ExpandableTable.rowSpinner);
+        //Utils.waitUntilIsDisappears(driver, ExpandableTable.rowSpinner);
+        /*int i = 0;
+        int lapse = 50;
+        int wait = 2000;
+        while((driver.findElements(ExpandableTable.rowSpinner).isEmpty())&&(i<=wait)){
+            sleep(lapse);
+            i = i + lapse;
         }
+        while((!driver.findElements(ExpandableTable.rowSpinner).isEmpty())&&(i<=wait)){
+            sleep(lapse);
+            i = i + lapse;
+        }
+        */
     }
     
     

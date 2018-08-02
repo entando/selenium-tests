@@ -115,14 +115,17 @@ public class DTPageTreeSearchTest extends PageTreeTestBase{
         dTPageTreePage.getClearResultButton().click();
         Utils.waitUntilIsVisible(driver, dTPageTreePage.getSearchButton());
         
+        
+        
         //Delete the pages
         Assert.assertTrue(deletePage(dTPageTreePage, pageName2)); 
-        
+               
         expandRows(dTPageTreePage, pageName1, super.headerTitles.get(0));
         
         Assert.assertTrue(deletePage(dTPageTreePage, pageName2));
         
         Assert.assertTrue(deletePage(dTPageTreePage, pageName1));
+        
         
         /** Debug code **/
         if(Logger.getGlobal().getLevel() == Level.INFO){

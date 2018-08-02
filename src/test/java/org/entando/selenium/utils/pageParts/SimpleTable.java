@@ -12,12 +12,14 @@ details.
 
 package org.entando.selenium.utils.pageParts;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import java.lang.Character;
 
 /**
  * This class represents the simple html table
@@ -160,9 +162,12 @@ public class SimpleTable {
             for(int j = 0; j < rows.size(); j++){
                 //The list of the cells row
                 rowCells = rows.get(j).findElements(cellTag);
-                /** Debug code **/ Logger.getGlobal().log(Level.INFO, "Elemento: {0}", rowCells.get(itemColumnIndex).getText());
-                //If the content of the cell in the corresponding column equal the column name, return the row
-                if(rowCells.get(itemColumnIndex).getText().equalsIgnoreCase(itemName)){
+                String currentItem = rowCells.get(itemColumnIndex).getText();
+                currentItem = trimInitialSpaces(currentItem);
+                /** Debug code **/ Logger.getGlobal().log(Level.INFO, "Elemento:{0}; Expected:{1}",
+                        new Object[]{currentItem, itemName});
+                //If the content of the cell, in the corresponding column, equal the column name, return the row
+                if(currentItem.equalsIgnoreCase(itemName)){
                     /** Debug code **/ Logger.getGlobal().info("Cell founded!!!");
                     return rowCells;
                 }
@@ -341,6 +346,20 @@ public class SimpleTable {
         }
         
         return kebabs;        
+    }
+    
+    
+    /**
+     * This metod trim initial spaces of a string
+     * @param toBeCut
+     * @return 
+     */
+    private String trimInitialSpaces(String toBeCut) {
+        while(Character.isSpaceChar(toBeCut.charAt(0)))
+        {
+            toBeCut = toBeCut.substring(1, toBeCut.length());
+        }
+        return toBeCut;
     }
     
     

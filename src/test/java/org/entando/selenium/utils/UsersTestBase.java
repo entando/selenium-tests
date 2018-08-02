@@ -60,7 +60,7 @@ public class UsersTestBase extends BrowsableTableTestTypology{
     public final double minPasswordLength = 8;
     
     //Default User Group
-    public final String userGroup = "1SLNM_TEST_DONT_TOUCH";
+    public final String userGroup = "1SeleniumTest_DontTouch";
             
     //Default User Role
     public final String userRole = "1SeleniumTest_DontTouch";
@@ -99,7 +99,7 @@ public class UsersTestBase extends BrowsableTableTestTypology{
         Assert.assertTrue(dTUserAddPage.getSaveButton().isEnabled());
         dTUserAddPage.getSaveButton().click();
         
-        Utils.waitUntilIsVisible(driver, dTUsersPage.getPageTitle());
+        Utils.waitUntilIsVisible(driver, dTUsersPage.getAddButton());
         
         //Wait loading page
         Utils.waitUntilIsPresent(driver, dTUsersPage.spinnerTag);
@@ -245,17 +245,19 @@ public class UsersTestBase extends BrowsableTableTestTypology{
     }
     
     
+    
     /**
      * 
      * @param dTUserProfileTypePage
      * @param dTUserProfileTypeAddPage
      * @param profileTypeName
      * @return 
+     * @throws java.lang.InterruptedException 
      */
     public boolean addProfileType(DTUserProfileTypePage dTUserProfileTypePage,
-            DTUserProfileTypeAddPage dTUserProfileTypeAddPage, String profileTypeName)
+            DTUserProfileTypeAddPage dTUserProfileTypeAddPage, String profileTypeName) throws InterruptedException
     {
-        dTUserProfileTypePage.getNewButton().click();
+        dTUserProfileTypePage.getAddButton().click();
         
         Utils.waitUntilIsVisible(driver, dTUserProfileTypeAddPage.getPageTitle());
         
@@ -263,22 +265,27 @@ public class UsersTestBase extends BrowsableTableTestTypology{
         dTUserProfileTypeAddPage.setNameField(profileTypeName);
         dTUserProfileTypeAddPage.setCodeField(profileTypeCode);
         
-
-
-        
         //Save and return
         dTUserProfileTypeAddPage.getSaveButton().click();
         
-        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getPageTitle());
+        //Loading next step
+        Utils.waitUntilIsVisible(driver, dTUserProfileTypeAddPage.getAddButton());
+        sleep(400);
+        
+        dTUserProfileTypeAddPage.getSaveButton().click();
         
         //Wait loading page
-               
+        Utils.waitUntilIsPresent(driver, dTUserProfileTypePage.spinnerTag);
+        Utils.waitUntilIsDisappears(driver, dTUserProfileTypePage.spinnerTag);
+        Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getTableBody());
         
-        //Assert the presence of the created user in the Users table
-        List<WebElement> createdUser = dTUserProfileTypePage.getTable().findRowList(profileTypeName, rolesTableHeaderTitles.get(0));
+        //Assert the presence of the created profile type in the Profile type table
+        List<WebElement> createdUser = dTUserProfileTypePage.getTable()
+                .findRowList(profileTypeName, rolesTableHeaderTitles.get(0));
         
         return(!createdUser.isEmpty());
     }
+    
     
     
     /**
@@ -308,7 +315,7 @@ public class UsersTestBase extends BrowsableTableTestTypology{
         Utils.waitUntilIsVisible(driver, dTUserProfileTypePage.getDeleteModalButton());
         /** Debug code **/ Logger.getGlobal().info(dTUserProfileTypePage.getModalBody().getText());
         /** Debug code **/ Logger.getGlobal().info(MessageFormat.format("Expected: {0}", profileTypeName));
-        Assert.assertTrue(dTUserProfileTypePage.getModalBody().getText().contains(profileTypeName.toLowerCase().substring(0, 10)));
+        Assert.assertTrue(dTUserProfileTypePage.getModalBody().getText().contains(profileTypeCode));
         Utils.waitUntilIsClickable(driver, dTUserProfileTypePage.getDeleteModalButton());
         sleep(100);
         dTUserProfileTypePage.getDeleteModalButton().click();
@@ -316,6 +323,7 @@ public class UsersTestBase extends BrowsableTableTestTypology{
         /** Debug code **/ Logger.getGlobal().info("delete Profile Type return true");   
         return true;
     }
+    
     
     
     /**
@@ -348,6 +356,7 @@ public class UsersTestBase extends BrowsableTableTestTypology{
         return(!createdUser.isEmpty());
     }
     
+    
         
     /**
      * This is a helper method that delete a role to be used in these tests
@@ -373,7 +382,7 @@ public class UsersTestBase extends BrowsableTableTestTypology{
         Utils.waitUntilIsVisible(driver, dTUserGroupsPage.getDeleteModalButton());
         /** Debug code **/ Logger.getGlobal().info(dTUserGroupsPage.getModalBody().getText());
         /** Debug code **/ Logger.getGlobal().info(MessageFormat.format("Expected: {0}", groupName));
-        Assert.assertTrue(dTUserGroupsPage.getModalBody().getText().contains(groupName.toLowerCase().substring(0, 10)));
+        Assert.assertTrue(dTUserGroupsPage.getModalBody().getText().contains(groupName.toLowerCase()));
         Utils.waitUntilIsClickable(driver, dTUserGroupsPage.getDeleteModalButton());
         sleep(100);
         dTUserGroupsPage.getDeleteModalButton().click();

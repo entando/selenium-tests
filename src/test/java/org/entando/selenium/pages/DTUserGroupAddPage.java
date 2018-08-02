@@ -68,7 +68,7 @@ public class DTUserGroupAddPage extends PageObject {
     @FindBy(xpath = "//div[contains(., 'You can insert max 20')]")
     private WebElement codeTooltip;
     
-    @FindBy (xpath = "//button[contains(.,'Add')]")
+    @FindBy (xpath = "//button[contains(.,'Save')]")
     private WebElement saveButton;
     
     

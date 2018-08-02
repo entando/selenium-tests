@@ -27,7 +27,7 @@ import org.openqa.selenium.support.FindBy;
  */
 public class DTUserGroupsPage extends PageObject implements BrowsableTablePageInterface{
     
-    @FindBy(css = "h1.PageTitle__title > span:nth-child(1)")
+    @FindBy(css = "h1 > span:nth-child(1)")
     private WebElement pageTitle;
     
     @FindBy(xpath = "//button[contains(., 'Add')]")
@@ -42,7 +42,7 @@ public class DTUserGroupsPage extends PageObject implements BrowsableTablePageIn
     @FindBy(css = "table > tbody")
     private WebElement tableBody;
     
-    @FindBy(xpath ="//table[contains(@class, 'RoleListTable__table')]")
+    @FindBy(xpath ="//table[contains(@class, 'GroupListTable__table')]")
     private WebElement table;
     
     @FindBy(css ="span.pagination-pf-pages")
@@ -72,7 +72,7 @@ public class DTUserGroupsPage extends PageObject implements BrowsableTablePageIn
     @FindBy(xpath = "//div[contains(@class, 'modal-body')]")
     private WebElement modalBody;
     
-    @FindBy(xpath = "//button[contains(@id, 'DeleteRoleModal__button-delete')]")
+    @FindBy(xpath = "//button[contains(@id, 'DeleteGroupModal__button-delete')]")
     private WebElement deleteModalButton;
     
     public static final By modalWindowTag = By.xpath("//div[contains(@class, 'modal-content')]");

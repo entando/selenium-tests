@@ -35,9 +35,11 @@ public class PageTreeTestBase extends ExpandableTableTestTypology{
     //Expected table header titles
     public final List<String> headerTitles = Arrays.asList("Page tree", "Status", "Displayed in menu", "Actions");
     //Owner group name
-    public final String ownerGroupName = "SeleniumTest_DontTouch";
+    public final String ownerGroupName = "1SeleniumTest_DontTouch";
+    //Owner group code
+    public final String ownerGroupCode = "aaaa";
     //Join Group name
-    public final String joinGroupName = "SeleniumTest_DontTouch";
+    public final String joinGroupName = "1SeleniumTest_DontTouch";
     //Page model name
     public final String pageModelName = "1SLNM_TEST_DONT_TOUCH";
     //Default Charset
@@ -65,7 +67,7 @@ public class PageTreeTestBase extends ExpandableTableTestTypology{
         //Compiling the fields
         dTPageTreeAddPage.setEnTitleField(pageName);
         dTPageTreeAddPage.setItTitleField(pageName);
-        dTPageTreeAddPage.setEsTitleField(pageName);
+        //dTPageTreeAddPage.setEsTitleField(pageName);
         Random generator = new Random();
         int randomNumber = generator.nextInt(9999);
         dTPageTreeAddPage.setCodeField(pageName + "Code" + randomNumber);

@@ -41,8 +41,8 @@ public class DTUserProfileTypePage extends PageObject implements BrowsableTableP
     @FindBy(css = "table > tbody")
     private WebElement tableBody;
 
-    @FindBy(xpath = "//button[contains(.,'New')]")
-    private WebElement newButton;
+    @FindBy(xpath = "//button[contains(.,'Add')]")
+    private WebElement addButton;
     
     @FindBy(css ="span.pagination-pf-pages")
     private WebElement numberOfTablePages;
@@ -90,8 +90,8 @@ public class DTUserProfileTypePage extends PageObject implements BrowsableTableP
         return tableBody;
     }
 
-    public WebElement getNewButton() {
-        return newButton;
+    public WebElement getAddButton() {
+        return addButton;
     }
 
     public WebElement getTooltip() {

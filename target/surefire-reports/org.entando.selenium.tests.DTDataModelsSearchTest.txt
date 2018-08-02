@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.entando.selenium.tests.DTDataModelsSearchTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.095 sec - in org.entando.selenium.tests.DTDataModelsSearchTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.45 sec - in org.entando.selenium.tests.DTDataModelsSearchTest

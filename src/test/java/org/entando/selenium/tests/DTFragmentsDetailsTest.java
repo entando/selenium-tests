@@ -86,10 +86,11 @@ public class DTFragmentsDetailsTest extends FragmentsTestBase{
         Utils.waitUntilIsVisible(driver, dTFragmentPage.getNewButton());
         
         //Create a Fragment
-        Assert.assertTrue(addFragment(dTFragmentPage, dTFragmentNewPage));
+        String testCode = code + "Edit";
+        Assert.assertTrue(addFragment(dTFragmentPage, dTFragmentNewPage, testCode));
         
         //Searching the corresponding kebab menù in the table
-        Kebab kebab = dTFragmentPage.getTable().getKebabOnTable(code, 
+        Kebab kebab = dTFragmentPage.getTable().getKebabOnTable(testCode, 
                 expectedHeaderTitles.get(0), expectedHeaderTitles.get(3));
         Assert.assertFalse(kebab == null);
         
@@ -97,7 +98,7 @@ public class DTFragmentsDetailsTest extends FragmentsTestBase{
         kebab.getClickable().click();
         Utils.waitUntilIsVisible(driver, kebab.getAllActionsMenu());
         //Click on the action
-        kebab.getAction(action + code).click();
+        kebab.getAction(action + testCode).click();
         
         Utils.waitUntilIsVisible(driver, dTFragmentDetailsPage.getPageTitle());
         
@@ -130,7 +131,7 @@ public class DTFragmentsDetailsTest extends FragmentsTestBase{
         Utils.waitUntilIsDisappears(driver, dTFragmentPage.spinnerTag);
               
         //delete the fragment
-        Assert.assertTrue(deleteFragment(dTFragmentPage, code));
+        Assert.assertTrue(deleteFragment(dTFragmentPage, testCode));
         
         
         /** Debug code **/

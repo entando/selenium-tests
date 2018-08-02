@@ -106,7 +106,7 @@ public class DTPageEditTest extends PageTreeTestBase {
         //Asserts the fields contains correct text
         Assert.assertEquals(pageName, dTPageEditPage.getEnTitleField().getAttribute("value"));
         Assert.assertEquals(pageName, dTPageEditPage.getItTitleField().getAttribute("value"));
-        Assert.assertEquals(pageName, dTPageEditPage.getEsTitleField().getAttribute("value"));
+        //Assert.assertEquals(pageName, dTPageEditPage.getEsTitleField().getAttribute("value"));
         Assert.assertTrue(dTPageEditPage.getCodeField().getAttribute("value").contains(pageName + "Code"));
         Assert.assertEquals(super.pageModelName, dTPageEditPage.getPageModel().getFirstSelectedOption().getText());
         
